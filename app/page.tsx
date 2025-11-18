@@ -1,5 +1,6 @@
-import Box from "@/components/box";
+import BoxContent from "@/components/box";
 import Logo from "@/components/logo";
+import Wrapper from "@/components/wrapper";
 
 export default function Home() {
     return (
@@ -18,7 +19,7 @@ export default function Home() {
             Make every trip effortless. Tripzy lets you book rides and plan journeys for ease
           </div>
         </div>
-        <Box/>
+        <Wrapper/>
       </div>
     );
 }
