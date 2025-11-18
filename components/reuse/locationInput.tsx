@@ -1,5 +1,3 @@
-"use client"
-
 import { ReactNode } from "react";
 import { Input } from "../ui/input";
 
