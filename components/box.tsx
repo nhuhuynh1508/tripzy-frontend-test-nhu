@@ -10,7 +10,6 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 import { useState } from "react";
-import PassengerInput from "./passengerInput";
 
 function formatDate(date: Date | undefined) {
   if (!date) {
@@ -41,41 +40,7 @@ export default function BoxContent () {
     return (
         <>
         <div className="flex flex-row gap-6">
-            <div>
-                <div className="flex items-center gap-2">
-                    <span>FROM</span>
-                </div>
-
-                <div className="relative">
-                    <Bus className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-
-                    <Input
-                        id="email"
-                        type="email"
-                        placeholder="m@example.com"
-                        required
-                        className="pl-10 py-6 w-full"
-                    />
-                </div>
-            </div>
-
-            <div>
-                <div className="flex items-center gap-2">
-                    <span>TO</span>
-                </div>
-
-                <div className="relative">
-                    <Bus className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-
-                    <Input
-                        id="email"
-                        type="email"
-                        placeholder="m@example.com"
-                        required
-                        className="pl-10 py-6 w-full"
-                    />
-                </div>
-            </div>
+            
 
             <div>
                 <div className="flex items-center gap-2">
