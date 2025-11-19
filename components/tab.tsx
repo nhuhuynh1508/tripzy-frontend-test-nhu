@@ -12,7 +12,9 @@ export default function Tab ({ activeTab, setActiveTab }: TabProps) {
         <div className="flex flex-col md:flex-row rounded-xl bg-white p-2 md:p-4 gap-2 md:gap-4 shadow-md">
             {/*Bus & Shuttle*/}
             <div 
-                className="flex rounded-md flex-1 md:px-5 px-3 py-2 gap-6 items-center justify-left hover:bg-[#EBF9FF] cursor-pointer"
+                className={`flex rounded-md flex-1 md:px-5 px-3 py-2 gap-6 items-center cursor-pointer
+                    ${activeTab === "bus" ? "bg-[#EBF9FF]" : "hover:bg-[#EBF9FF]"}
+                `}
                 onClick={() => setActiveTab("bus")}
             >
                 <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#D3F3FF] flex items-center justify-center">
@@ -23,7 +25,9 @@ export default function Tab ({ activeTab, setActiveTab }: TabProps) {
 
             {/*Hotel & Accommodation*/}
             <div 
-                className="flex rounded-md flex-1 md:px-5 px-3 py-2 gap-6 items-center justify-left hover:bg-[#F4FFEB] cursor-pointer"
+                className={`flex rounded-md flex-1 md:px-5 px-3 py-2 gap-6 items-center cursor-pointer
+                    ${activeTab === "hotel" ? "bg-[#F4FFEB]" : "hover:bg-[#F4FFEB]"}
+                `}
                 onClick={() => setActiveTab("hotel")}
             >
                 <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#E8FBCC] flex items-center justify-center">
@@ -34,7 +38,9 @@ export default function Tab ({ activeTab, setActiveTab }: TabProps) {
 
             {/*Flight*/}
             <div 
-                className="flex rounded-md flex-1 md:px-5 px-3 py-2 gap-6 items-center justify-left hover:bg-[#EBF4FF] cursor-pointer" 
+                className={`flex rounded-md flex-1 md:px-5 px-3 py-2 gap-6 items-center cursor-pointer
+                    ${activeTab === "flight" ? "bg-[#EBF4FF]" : "hover:bg-[#EBF4FF]"}
+                `}
                 onClick={() => setActiveTab("flight")}
             >
                 <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#E1EDFE] flex items-center justify-center">

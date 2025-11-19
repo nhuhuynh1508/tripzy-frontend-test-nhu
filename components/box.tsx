@@ -50,20 +50,15 @@ export default function BoxContent () {
                     label="DEPARTURE DATE"
                     onChange={setDepartureDate} 
                 />
-
                 
-                    <DateInput
-                        label="ROUND TRIP"
-                        onChange={setArrivalDate}
-                        withCheckbox
-                    />
+                <DateInput
+                    label="ROUND TRIP"
+                    onChange={setArrivalDate}
+                    withCheckbox
+                />
 
 
-                <PassengerCount/>
-                
-
-
-                
+                <PassengerCount/>    
             </div>
 
             <div className="flex items-center justify-center"> 
