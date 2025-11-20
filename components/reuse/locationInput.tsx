@@ -42,7 +42,7 @@ export default function LocationInput ({ label, icon, placeholder, value, onChan
                     </div>
 
             {open && (
-                <div className="absolute mt-1 w-[200px] bg-white border rounded shadow max-h-60 overflow-y-auto">
+                <div className="absolute mt-1 w-[200px] bg-white border rounded shadow max-h-60 overflow-y-auto z-10">
                 {filteredLocations.length === 0 ? (
                     <div className="p-3 text-sm text-gray-500">No matches</div>
                 ) : (
