@@ -9,7 +9,7 @@ export default function Wrapper() {
     const [activeTab, setActiveTab] = useState("bus");
 
     return (
-        <div className="bg-white max-w-5xl mx-auto rounded-xl shadow-md mt-4 w-full">
+        <div className="bg-white w-[1340px] mx-auto rounded-xl shadow-md mt-4">
             <Tab activeTab={activeTab} setActiveTab={setActiveTab} />
 
             <div className="mt-4">
