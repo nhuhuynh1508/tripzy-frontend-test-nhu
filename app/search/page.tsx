@@ -3,8 +3,10 @@
 import Logo from "@/components/logo"
 import Link from "next/link"
 import { useSearchParams } from "next/navigation"
+import { connection } from 'next/server'
 
-export default function Search () {
+export default async function Search () {
+    await connection()
     const searchParams = useSearchParams()
 
     const from = searchParams.get("from")
@@ -12,6 +14,8 @@ export default function Search () {
     const departureDate = searchParams.get("departureDate")
     const arrivalDate = searchParams.get("arrivalDate")
     const passengerCount = searchParams.get("passengerCount")
+
+    
 
     return (
         <div 
