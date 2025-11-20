@@ -3,25 +3,21 @@ import LocationInput from "./reuse/locationInput"
 import DateInput from "./reuse/dateInput"
 import { useState } from "react"
 import { Button } from "./ui/button"
-import { locations } from "./data/locations"
 import PassengerCount from "./reuse/passengerCount"
+import Link from "next/link"
 
 export default function BoxContent () {
     const [from, setFrom] = useState("")
     const [to, setTo] = useState("")
     const [departureDate, setDepartureDate] = useState<Date | undefined>()
-    const [arrivalDate, setArrivalDate] = useState<Date | undefined>();
+    const [arrivalDate, setArrivalDate] = useState<Date | undefined>()
+    const [passengers, setPassengers] = useState(1)
 
-    const handleSearch = () => {
-        const fromLocation = locations.find(
-            (loc) => loc.english_name.toLowerCase() === from.toLowerCase()
-        )
-        const toLocation = locations.find(
-            (loc) => loc.english_name.toLowerCase() === to.toLowerCase()
-        )
-
-        console.log({ fromLocation, toLocation })
+    function formatDDMMYYYY(isoString: string) {
+        const d = new Date(isoString);
+        return d.toLocaleDateString("en-GB");
     }
+
 
     return (
         <div className="flex flex-col justify-between px-4 py-4 gap-8">
@@ -57,20 +53,34 @@ export default function BoxContent () {
                     withCheckbox
                 />
 
-
-                <PassengerCount/>    
+                <PassengerCount 
+                    value={passengers}
+                    onChange={setPassengers}
+                />    
             </div>
 
-            <div className="flex items-center justify-center"> 
-                <Button
-                    type="button"
-                    className="font-nunito text-[#FFFFFF] bg-[#19C0FF] w-[250px] py-6 rounded-2xl cursor-pointer"
-                    onClick={handleSearch}
+            <Link
+                href={{
+                    pathname: "/search",
+                    query: {
+                    from,
+                    to,
+                    departureDate: departureDate
+                        ? formatDDMMYYYY(departureDate.toISOString())
+                        : "",
+                    arrivalDate: arrivalDate
+                        ? formatDDMMYYYY(arrivalDate.toISOString())
+                        : "",
+                    passengerCount: passengers.toString(),
+                    },
+                }}
+                className="flex items-center justify-center"
                 >
-                <Search/>
-                    SEARCH
-                </Button>
-            </div>
+                    <Button className="font-nunito text-[#FFFFFF] bg-[#19C0FF] w-[250px] py-6 rounded-2xl">
+                        <Search />
+                        SEARCH
+                    </Button>
+            </Link>
         </div>
     )
 }
