@@ -30,7 +30,7 @@ export default function Search () {
                 <p>From: {from}</p>
                 <p>To: {to}</p>
                 <p>Departure: {departureDate}</p>
-                <p>Arrival: {arrivalDate}</p>
+                <p>Arrival: {arrivalDate ? arrivalDate : "No arrival date"}</p>
                 <p>No. of passenger: {passengerCount}</p>
 
             </div>
