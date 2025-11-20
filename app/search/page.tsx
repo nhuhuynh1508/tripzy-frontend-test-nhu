@@ -1,6 +1,7 @@
 "use client"
 
 import Logo from "@/components/logo"
+import Link from "next/link"
 import { useSearchParams } from "next/navigation"
 
 export default function Search () {
@@ -20,7 +21,9 @@ export default function Search () {
             }}
         >
             <div className="absolute top-5 left-5">
-                <Logo />
+                <Link href="/">
+                    <Logo />
+                </Link>
             </div>
             <div className="flex flex-col bg-white shadow rounded-2xl w-[1000px] h-[600px] mt-10 items-start gap-10 px-20 py-20 font-nunito font-semibold">
 
