@@ -1,17 +1,17 @@
 import { ChevronDown, ChevronUp, User } from "lucide-react";
 import { Button } from "../ui/button";
-import { useState } from "react";
 
 interface PassengerCountProps {
+    label: string;
     value: number;
     onChange: (value: number) => void;
 }
 
-export default function PassengerCount({ value, onChange }: PassengerCountProps) {
+export default function PassengerCount({ label, value, onChange }: PassengerCountProps) {
 
     return (
         <div className="flex flex-col">
-            <span className="font-nunito text-sm mb-1">PASSENGER</span>
+            <span className="font-nunito text-sm mb-1">{label}</span>
 
             <div className="flex items-center border rounded-md gap-6 h-[50px]">
                 <div className="flex items-center px-3 gap-3">

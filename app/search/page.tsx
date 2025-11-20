@@ -15,8 +15,6 @@ export default async function Search () {
     const arrivalDate = searchParams.get("arrivalDate")
     const passengerCount = searchParams.get("passengerCount")
 
-    
-
     return (
         <div 
             className="w-full h-screen flex items-center justify-center"

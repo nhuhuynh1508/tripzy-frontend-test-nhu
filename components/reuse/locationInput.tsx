@@ -39,7 +39,7 @@ export default function LocationInput ({ label, icon, placeholder, value, onChan
                     }}
                     className="pl-10 py-6 w-[200px] block truncate"
                 />
-                    </div>
+            </div>
 
             {open && (
                 <div className="absolute mt-1 w-[200px] bg-white border rounded shadow max-h-60 overflow-y-auto z-10">

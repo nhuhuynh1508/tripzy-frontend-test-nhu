@@ -1,4 +1,3 @@
-import BoxContent from "@/components/box";
 import Logo from "@/components/logo";
 import Wrapper from "@/components/wrapper";
 

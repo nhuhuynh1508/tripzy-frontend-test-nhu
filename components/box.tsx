@@ -79,7 +79,11 @@ export default function BoxContent() {
                 withCheckbox
             />
 
-            <PassengerCount value={passengers} onChange={setPassengers} />
+            <PassengerCount
+                label="PASSENGER"  
+                value={passengers} 
+                onChange={setPassengers}
+            />
         </div>
 
         {showAlert && (
